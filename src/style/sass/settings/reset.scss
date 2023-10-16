@@ -1,0 +1,45 @@
+html {
+    font-size: 62.5%;
+    width: 100vw;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+html,
+body {
+    min-height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+*::before, 
+*, 
+*::after {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;                                  
+    outline-color: rgb(0, 178, 238);
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* macOS */
+    -moz-osx-font-smoothing: grayscale; /* macOS */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:active,
+a:visited {
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
