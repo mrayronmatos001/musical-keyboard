@@ -1,7 +1,13 @@
 const audios = document.querySelectorAll('audio')
+const lis = document.querySelectorAll('li')
 const keys = document.querySelectorAll('.key')
 const audiolist = {}
 const keylist = {}
+const eye = {
+    eye: document.querySelector('.eye'),
+    wrapper: document.querySelector('.eye .eye__wrapper'),
+    icon: document.querySelector('.eye i')
+}
 
 const functions = {
     playNote: e => {
@@ -14,8 +20,10 @@ const functions = {
 
         functions.subfunctions.addPlayingClass(key).playAudio(audioKeyCode)
     },
-    removePlayNote: e => {
-        e.target.classList.remove("playing")
+    toggleKeboardKeys: () => {
+        eye.icon.classList.toggle('fa-eye')
+        eye.icon.classList.toggle('fa-eye-slash')
+        lis.forEach(li => li.classList.toggle('slash'))
     },
     subfunctions: {
         getKeyCode: (e) => {
@@ -24,6 +32,9 @@ const functions = {
         addPlayingClass: function(key) {
             key.classList.add('playing')
             return this
+        },
+        removePlayingClass: e => {
+            e.target.classList.remove("playing")
         },
         playAudio: function(audioKeyCode) {
             audiolist[audioKeyCode].currentTime = 0
@@ -40,12 +51,13 @@ const setStoreObjects = () => {
 }
 
 const setListeners = () => {
+    window.onkeydown = functions.playNote
     keys.forEach(key => {
         key.onclick = functions.playNote
-        key.ontransitionend = functions.removePlayNote
+        key.ontransitionend = functions.subfunctions.removePlayingClass
     })
+    eye.wrapper.onclick = functions.toggleKeboardKeys
 
-    window.onkeydown = functions.playNote
 }
 
 const init = () => {

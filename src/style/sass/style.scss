@@ -11,11 +11,17 @@ $base-color: #fd951f;
 $bg-color: #000;
 $white: #f0f0f9;
 
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 body {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    @extend .flex-center;
     background: $bg-color url('../../../assets/imgs/background-svg.svg') -40% 40% no-repeat;
+
+    position: relative;
 }
 
 #m-keyboard {
@@ -79,10 +85,130 @@ body {
 .playing {
     transform: scale(0.98);
     border-color: $base-color;
-    box-shadow: 0 0 5px 10px $base-color;
+    box-shadow: 0 0 10px 3px $base-color;
     z-index: 2;
 }
 
 .key {
     transition: transform 80ms ease;
+}
+
+.eye {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.eye__wrapper {
+  @extend .flex-center;
+  border: 2px solid $white;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+i {
+  display: flex;
+  color: $white;
+  font-size: 25px;
+  justify-content: center;
+}
+
+li .key::after {
+  align-items: center;
+  color: $white;
+  content: "";
+  display: flex;
+  font-weight: 600;
+  height: 30px;
+  justify-content: center;
+  transform: translateX(-50%);
+  width: 30px;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+li.slash .key::after {
+  display: none;
+}
+
+li.s1 .key:nth-child(1)::after {
+  content: "A";
+  color: #000;
+}
+
+li.s1 .key:nth-child(2)::after {
+  content: "W";
+}
+
+li.s2 .key:nth-child(1)::after {
+  content: "S";
+  color: #000;
+}
+
+li.s2 .key:nth-child(2)::after {
+  content: "E";
+}
+
+li.s3 .key:nth-child(1)::after {
+  content: "D";
+  color: #000;
+}
+
+li.s4 .key:nth-child(1)::after {
+  content: "F";
+  color: #000;
+}
+
+li.s4 .key:nth-child(2)::after {
+  content: "T";
+}
+
+li.s5 .key:nth-child(1)::after {
+  content: "G";
+  color: #000;
+}
+
+li.s5 .key:nth-child(2)::after {
+  content: "Y";
+}
+
+li.s6 .key:nth-child(1)::after {
+  content: "H";
+  color: #000;
+}
+
+li.s6 .key:nth-child(2)::after {
+  content: "U";
+}
+
+li.s7 .key:nth-child(1)::after {
+  content: "J";
+  color: #000;
+}
+
+li.s8 .key:nth-child(1)::after {
+  content: "K";
+  color: #000;
+}
+
+li.s8 .key:nth-child(2)::after {
+  content: "O";
+}
+
+li.s9 .key:nth-child(1)::after {
+  content: "L";
+  color: #000;
+}
+
+li.s9 .key:nth-child(2)::after {
+  content: "P";
+}
+
+li.s10 .key:nth-child(1)::after {
+  content: "Ç";
+  color: #000;
 }
