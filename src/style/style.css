@@ -63,7 +63,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #bf00ff;
+  background: #000 url("../../../assets/imgs/background-svg.svg") -40% 40% no-repeat;
 }
 
 #m-keyboard {
@@ -104,10 +104,9 @@ body {
   background: #000;
   box-shadow: 1px 0 #777, 0 2px #777, 0 3px #666, 0 4px #555, 0 5px #444, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1019607843), 0 1px 3px rgba(0, 0, 0, 0.3019607843), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2509803922), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
   height: 120px;
-  transform: translateX(-50%);
   width: 70%;
   position: absolute;
-  left: 100%;
+  left: 65%;
   z-index: 2;
 }
 .black:active {
@@ -118,6 +117,7 @@ body {
   transform: scale(0.98);
   border-color: #fd951f;
   box-shadow: 0 0 5px 10px #fd951f;
+  z-index: 2;
 }
 
 .key {
